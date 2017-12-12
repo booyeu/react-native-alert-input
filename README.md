@@ -1,5 +1,21 @@
 # react-native-alert-input
 
+## Install
+
+```bash
+npm install react-native-alert-input --save
+```
+
+## Usage
+
+```javascript
+import AlertInput from 'react-native-alert-input';
+
+<AlertInput />
+```
+
+## Properties
+
 | Prop  | Default  | Required | Description |
 | :------------ |:---------------:| :---------------:| :-----|
 | show | false | yes | Controller whether or not show it |
