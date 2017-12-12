@@ -14,6 +14,10 @@ import AlertInput from 'react-native-alert-input';
 <AlertInput />
 ```
 
+## Example
+
+![ios](https://raw.githubusercontent.com/BooYeu/react-native-alert-input/master/images/ios.jpg)
+
 ## Properties
 
 | Prop  | Default  | Required | Description |
