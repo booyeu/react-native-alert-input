@@ -87,6 +87,6 @@ const styles=StyleSheet.create({
     width:'50%',
     textAlign:'center',
     fontWeight:'bold',
-    paddingVertical:10
+    paddingVertical:12
   }
 });
