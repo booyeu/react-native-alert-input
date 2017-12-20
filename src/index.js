@@ -13,29 +13,45 @@ export default class extends React.Component{
     submitStyle:{},
     style:{},
     inputStyle:{},
-    titleStyle:{},
-    placeholder:''
+    placeholder:'',
+    num:1,
+    content:[]
   };
   constructor(props){
     super(props);
-    this.state={content:''};
+    this.state={content:[]};
   }
   render(){
+    const content=this.state.content;
+    const myContent=[];
+    const num=this.props.num;
+    if(!this.props.content||this.props.content.length!==num) {
+      for (let i = 0; i < num; i++)
+        myContent.push(
+          <TextInput
+            style={[styles.input, this.props.inputStyle]}
+            autoFocus={i===0?true:false}
+            onChangeText={(text) => {
+              content[i] = text;
+              this.setState({content: content});
+            }}
+            placeholder={this.props.placeholder}
+            underlineColorAndroid={'transparent'}
+          />
+        );
+    }
+    else
+      for(let i=0;i<num;i++)
+        myContent.push(this.props.content[i]);
     return(
       this.props.show?
         <ScrollView style={styles.masker} keyboardDismissMode={'on-drag'}>
           <View style={[styles.container,this.props.style]}>
-            {this.props.title?<Text style={[styles.title,this.props.titleStyle]}>{this.props.title}</Text>:null}
-            <TextInput
-              style={[styles.input,this.props.inputStyle]}
-              autoFocus={true}
-              onChangeText={(text)=>this.setState({content:text})}
-              placeholder={this.props.placeholder}
-              underlineColorAndroid={'transparent'}
-            />
+            {this.props.title?(typeof this.props.title==='string'?<Text style={styles.title}>{this.props.title}</Text>:this.props.title):null}
+            {myContent}
             <View style={styles.btn_container}>
               <Text style={[styles.btn,this.props.cancelStyle]} onPress={()=>this.props.onCancel()}>{this.props.cancelText}</Text>
-              <Text style={[styles.btn,this.props.submitStyle]} onPress={()=>this.props.onSubmit(this.state.content)}>{this.props.submitText}</Text>
+              <Text style={[styles.btn,this.props.submitStyle]} onPress={()=>this.props.onSubmit(num===1?this.state.content[0]:this.state.content)}>{this.props.submitText}</Text>
             </View>
           </View>
         </ScrollView>:null
@@ -65,23 +81,28 @@ const styles=StyleSheet.create({
   title:{
     textAlign:'center',
     paddingTop:13,
+    paddingHorizontal:6,
     fontSize:15,
     color:'#666',
-    fontWeight:'bold'
+    fontWeight:'bold',
+    lineHeight:20,
+    marginBottom:10
   },
   input:{
     paddingHorizontal:8,
     height:34,
     backgroundColor:'#eee',
-    marginVertical:20,
+    marginVertical:10,
     borderTopWidth:.5,
     borderBottomWidth:.5,
-    borderColor:'#ccc'
+    borderColor:'#ccc',
+    fontSize:15
   },
   btn_container:{
     flexDirection:'row',
     borderTopWidth:.5,
-    borderColor:'#ddd'
+    borderColor:'#ddd',
+    marginTop:10
   },
   btn:{
     width:'50%',
