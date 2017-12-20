@@ -1,4 +1,4 @@
-# react-native-alert-input [![Monthly download](https://img.shields.io/npm/dm/react-native-alert-input.svg)](https://img.shields.io/npm/dm/react-native-alert-input.svg) [![Total downloads](https://img.shields.io/npm/dt/react-native-alert-input.svg)](https://img.shields.io/npm/dt/react-native-alert-input.svg)
+# react-native-alert-input
 
 ## Install
 
@@ -25,8 +25,7 @@ import AlertInput from 'react-native-alert-input';
 | :------------ |:---------------:| :---------------:| :-----|
 | show | false | yes | Controller whether or not show it |
 | style | - | no | The style of the container |
-| title | '' | no | The title text of the container |
-| titleStyle | - | no | The style of the title |
+| title | '' | no | The title text of the container or an object|
 | onCancel | ()=>{} | no | Function that is called when user cancels it |
 | onSubmit | (text)=>{} | no | Function that is called when user submits it |
 | cancelText | 'cancel' | no | The string that is displayed on the cancel button |
@@ -36,3 +35,5 @@ import AlertInput from 'react-native-alert-input';
 | style | - | no | The style of the container |
 | placeholder | '' | no | The placeholder text of the input |
 | inputStyle | - | no | The style of the input |
+| num | 1 | no | The amount of the input or the content you provide |
+| content | [] | no | If you don't want to show input , you should provide an object array of "num" elements |
