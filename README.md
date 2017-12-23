@@ -1,4 +1,4 @@
-# react-native-alert-input
+# react-native-alert-input [![Monthly download](https://img.shields.io/npm/dm/react-native-alert-input.svg)](https://img.shields.io/npm/dm/react-native-alert-input.svg) [![Total downloads](https://img.shields.io/npm/dt/react-native-alert-input.svg)](https://img.shields.io/npm/dt/react-native-alert-input.svg)
 
 ## Install
 
