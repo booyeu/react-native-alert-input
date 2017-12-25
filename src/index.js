@@ -29,6 +29,7 @@ export default class extends React.Component{
       for (let i = 0; i < num; i++)
         myContent.push(
           <TextInput
+            key={'input_'+i}
             style={[styles.input, this.props.inputStyle]}
             autoFocus={i===0?true:false}
             onChangeText={(text) => {
