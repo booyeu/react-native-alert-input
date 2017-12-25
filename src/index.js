@@ -62,7 +62,6 @@ export default class extends React.Component{
 const styles=StyleSheet.create({
   masker:{
     flex:1,
-    alignItems:'center',
     position:'absolute',
     top:0,
     left:0,
@@ -72,6 +71,7 @@ const styles=StyleSheet.create({
     zIndex:100
   },
   container:{
+    alignSelf:'center',
     width:'75%',
     marginTop:150,
     backgroundColor:'#fff',
