@@ -90,6 +90,7 @@ const styles=StyleSheet.create({
     marginBottom:10
   },
   input:{
+    paddingVertical:0,
     paddingHorizontal:8,
     height:34,
     backgroundColor:'#eee',
