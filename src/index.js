@@ -20,6 +20,7 @@ export default class extends React.Component{
   constructor(props){
     super(props);
     this.state={content:[]};
+    this.cancelF=()=>this.props.onCancel();
   }
   render(){
     const content=this.state.content;
@@ -29,7 +30,7 @@ export default class extends React.Component{
       for (let i = 0; i < num; i++)
         myContent.push(
           <TextInput
-            key={'input_'+i}
+						key={'input_'+i}
             style={[styles.input, this.props.inputStyle]}
             autoFocus={i===0?true:false}
             onChangeText={(text) => {
@@ -51,7 +52,7 @@ export default class extends React.Component{
             {this.props.title?(typeof this.props.title==='string'?<Text style={styles.title}>{this.props.title}</Text>:this.props.title):null}
             {myContent}
             <View style={styles.btn_container}>
-              <Text style={[styles.btn,this.props.cancelStyle]} onPress={()=>this.props.onCancel()}>{this.props.cancelText}</Text>
+              <Text style={[styles.btn,this.props.cancelStyle]} onPress={this.cancelF}>{this.props.cancelText}</Text>
               <Text style={[styles.btn,this.props.submitStyle]} onPress={()=>this.props.onSubmit(num===1?this.state.content[0]:this.state.content)}>{this.props.submitText}</Text>
             </View>
           </View>
@@ -72,7 +73,7 @@ const styles=StyleSheet.create({
     zIndex:100
   },
   container:{
-    alignSelf:'center',
+		alignSelf:'center',
     width:'75%',
     marginTop:150,
     backgroundColor:'#fff',
@@ -90,7 +91,7 @@ const styles=StyleSheet.create({
     marginBottom:10
   },
   input:{
-    paddingVertical:0,
+		paddingVertical:0,
     paddingHorizontal:8,
     height:34,
     backgroundColor:'#eee',
