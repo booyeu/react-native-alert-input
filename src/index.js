@@ -13,7 +13,7 @@ import {
 const windowHeight = Dimensions.get('window').height;
 
 
-export class Test extends React.Component {
+export default class extends React.Component {
   static defaultProps = {
     show: false,
     title: '',
