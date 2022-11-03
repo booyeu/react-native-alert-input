@@ -152,7 +152,7 @@ const PickerActionSheet = props => {
 
   return show ? (
       <Animated.View
-          style={[styles.animated_container, {height: keyboardHeight}]}>
+          style={[styles.animated_container, {height: keyboardHeight.current}]}>
         <TouchableOpacity
             activeOpacity={1}
             style={styles.masker}

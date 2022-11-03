@@ -1,6 +1,6 @@
 {
   "name": "react-native-alert-input",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple react native component , both android and ios AlertIos",
   "main": "src/index.js",
   "repository": {
